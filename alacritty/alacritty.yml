@@ -1,0 +1,78 @@
+env:
+  TERM: xterm-256color
+window:
+  padding:
+    x: 6
+    y: 6
+  opacity: 0.9
+scrolling:
+  history: 5000 
+  multiplier: 5
+
+font:
+  normal:
+    family: "Hack Nerd Font Mono"
+    style: Regular 
+  bold:
+    family: "Hack Nerd Font Mono"
+    style: Medium 
+  italic:
+    family: "Hack Nerd Font Mono"
+    style: Italic
+  size: 8
+  offset:
+    x: 0
+    y: 1
+
+# The 'Dark dimmed' colorscheme from Github.
+colors:
+  primary:
+    background: '#1d2021'
+    foreground: '#adbac7'
+  normal:
+    black:   '#2d333b'
+    red:     '#f47067'
+    green:   '#8ddb8c'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+  bright:
+    black:   '#768390'
+    red:     '#f47067'
+    green:   '#8ddb8c'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+
+cursor:
+    style:
+        shape: Block
+        blinking: Always
+    blink_interval: 500
+    unfocused_hollow: true
+    thickness: 0.15
+
+draw_bold_text_with_bright_colors: true
+live_config_reload: true
+mouse_binding:
+  - { mouse: Right,   action: PasteSelection }
+
+key_bindings:
+  - { key: Q,         mods: Control,       action: Quit                        }
+  - { key: V,         mods: Control|Shift, action: Paste                       }
+  - { key: C,         mods: Control|Shift, action: Copy                        }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+
