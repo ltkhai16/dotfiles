@@ -1,0 +1,55 @@
+{
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.sideBar.location": "right",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": "normal",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "cSpell.language": "en,vi",
+  "cSpell.userWords": [
+    "esbenp",
+    "Hien",
+    "iloc",
+    "matplotlib",
+    "Nord",
+    "rgba",
+    "sklearn"
+  ],
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "indentRainbow.colors": [
+    "rgba(16,16,16,0.1)",
+    "rgba(16,16,16,0.2)",
+    "rgba(16,16,16,0.3)",
+    "rgba(16,16,16,0.4)",
+    "rgba(16,16,16,0.5)",
+    "rgba(16,16,16,0.6)",
+    "rgba(16,16,16,0.7)",
+    "rgba(16,16,16,0.8)",
+    "rgba(16,16,16,0.9)",
+    "rgba(16,16,16,1.0)"
+  ],
+  "editor.stickyScroll.enabled": true,
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.enabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
+}
