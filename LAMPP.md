@@ -37,8 +37,9 @@ mysql_secure_installation
 ## Create new user to use instead root user
 
 ```
-CREATE USER 'myadmin'@'localhost' IDENTIFIED BY '1122';
-GRANT ALL PRIVILEGES ON _._ TO 'myadmin'@'localhost' WITH GRANT OPTION;
+CREATE USER 'myadmin'@'localhost' IDENTIFIED BY '1111';
+GRANT ALL PRIVILEGES ON *.* TO 'myadmin'@'localhost' IDENTIFIED BY '1111';
+SHOW GRANTS FOR 'myadmin'@localhost;
 FLUSH PRIVILEGES;
 ```
 
