@@ -54,7 +54,7 @@ alias \
 	ll="exa -Fl --color=automatic --group-directories-first --icons --git" \
  	la="l -a" \
  	lla="ll -a" \
- 	lt="tree -C --dirsfirst -L" \
+ 	lt="exa -T" \
 
 # Merge Xresources
 alias merge="xrdb -merge ~/.Xresources"
