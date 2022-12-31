@@ -5,22 +5,22 @@ window:
   # x: 5
   # y: 5
   dynamic_padding: true
-  opacity: 0.87
+  opacity: 0.9
 scrolling:
   history: 5000 
   multiplier: 5
 
 font:
   normal:
-    family: "SauceCodePro Nerd Font Mono"
+    family: "Hack"
     style: Regular 
   bold:
-    family: "SauceCodePro Nerd Font Mono"
+    family: "Hack"
     style: Medium 
   italic:
-    family: "SauceCodePro Nerd Font Mono"
+    family: "Hack"
     style: Italic
-  size: 8 
+  size: 9
 
 # TokyoNight Alacritty Colors
 colors:
