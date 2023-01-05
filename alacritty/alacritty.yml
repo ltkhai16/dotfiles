@@ -5,27 +5,27 @@ window:
   # x: 5
   # y: 5
   dynamic_padding: true
-  opacity: 0.9
+  opacity: 0.8
 scrolling:
   history: 5000 
   multiplier: 5
 
 font:
   normal:
-    family: "Hack"
+    family: "FiraCode Nerd Font Mono"
     style: Regular 
   bold:
-    family: "Hack"
+    family: "FiraCode Nerd Font Mono"
     style: Medium 
   italic:
-    family: "Hack"
+    family: "FiraCode Nerd Font Mono"
     style: Italic
   size: 8
 
 # dracula
 colors:
   primary:
-    background: '#282a36'
+    background: '#202128'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:

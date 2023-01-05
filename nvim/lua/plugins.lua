@@ -7,7 +7,8 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'folke/tokyonight.nvim'
+  use 'Mofiqul/dracula.nvim'
+  use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'wbthomason/packer.nvim'
   use 'nvim-lualine/lualine.nvim' -- Status line
 
@@ -15,8 +16,6 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
 
-  use 'kyazdani42/nvim-web-devicons' -- File icons
   -- use 'github/copilot.vim'
 end)
 
-vim.cmd[[colorscheme tokyonight]]

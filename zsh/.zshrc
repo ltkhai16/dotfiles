@@ -15,14 +15,13 @@ alias \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
-	yt="yt-dlp --embed-metadata -i" \
+  yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best -o '~/Music/%(title)s.%(ext)s'" \
 
 # Colorize commands when possible.
 alias \
 	grep="grep --color=auto" \
 	egrep="egrep --color=auto" \
-	pgrep="pgrep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto" \
@@ -30,18 +29,16 @@ alias \
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
-	sdn="shutdown now" \
 	df="df -h" \
-	free="free -m" \
+	free="free -hm" \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
 	za="zathura" \
 	nf="neofetch" \
-	lf="lfub" \
-	sxiv="nsxiv" \
 	py="python" \
 	cl="clear" \
+  rg="ranger" \
  	jctl="sudo journalctl -p 3 -xb" \
  	cks="jctl && sudo dmesg | grep error && sudo systemctl --failed" \
 	myip="curl http://ipecho.net/plain; echo" \
@@ -70,8 +67,7 @@ alias \
 alias \
   tc="nvim ~/.config/alacritty/alacritty.yml" \
   zc="nvim $ZDOTDIR/.zshrc" \
-  sz="source $ZDOTDIR/.zshrc" \
-  lfc="nvim $XDG_CONFIG_HOME/lf/lfrc" \
+  sz="source ~/.zshenv" \
   zac="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \
   vimc="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
   mc="sudo -e /etc/pacman.d/mirrorlist" \
