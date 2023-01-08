@@ -1,11 +1,8 @@
 
-#ibus-bamboo
+# ibus-bamboo
+## auto-start ibus-daemon with KDE setting
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT4_IM_MODULE=ibus
 export CLUTTER_IM_MODULE=ibus
-ibus-daemon -drx
-
-#kvantum
-export QT_STYLE_OVERRIDE=kvantum
