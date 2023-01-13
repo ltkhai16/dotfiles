@@ -1,68 +1,70 @@
 env:
   TERM: xterm-256color
+
 window:
-  #  padding:
-  # x: 5
-  # y: 5
   dynamic_padding: true
   opacity: 0.9
+
 scrolling:
   history: 5000 
   multiplier: 5
 
 font:
   normal:
-    family: "FiraCode Nerd Font Mono"
+    family: "UbuntuMono Nerd Font"
     style: Regular 
   bold:
-    family: "FiraCode Nerd Font Mono"
+    family: "UbuntuMono Nerd Font"
     style: Medium 
   italic:
-    family: "FiraCode Nerd Font Mono"
+    family: "UbuntuMono Nerd Font"
     style: Italic
-  size: 8
+  size: 14.5
 
 # Nightfox Alacritty Colors
-# Style: nightfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
+# Style: carbonfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:
-    background: '0x192330'
-    foreground: '0xcdcecf'
+    background: '0x161616'
+    foreground: '0xf2f4f8'
   # Normal colors
   normal:
-    black:   '0x393b44'
-    red:     '0xc94f6d'
-    green:   '0x81b29a'
-    yellow:  '0xdbc074'
-    blue:    '0x719cd6'
-    magenta: '0x9d79d6'
-    cyan:    '0x63cdcf'
+    black:   '0x282828'
+    red:     '0xee5396'
+    green:   '0x25be6a'
+    yellow:  '0x08bdba'
+    blue:    '0x78a9ff'
+    magenta: '0xbe95ff'
+    cyan:    '0x33b1ff'
     white:   '0xdfdfe0'
   # Bright colors
   bright:
-    black:   '0x575860'
-    red:     '0xd16983'
-    green:   '0x8ebaa4'
-    yellow:  '0xe0c989'
-    blue:    '0x86abdc'
-    magenta: '0xbaa1e2'
-    cyan:    '0x7ad5d6'
+    black:   '0x484848'
+    red:     '0xf16da6'
+    green:   '0x46c880'
+    yellow:  '0x2dc7c4'
+    blue:    '0x8cb6ff'
+    magenta: '0xc8a5ff'
+    cyan:    '0x52bdff'
     white:   '0xe4e4e5'
   indexed_colors:
-    - { index: 16, color: '0xf4a261' }
-    - { index: 17, color: '0xd67ad2' }
+    - { index: 16, color: '0x3ddbd9' }
+    - { index: 17, color: '0xff7eb6' }
 
 cursor:
     style:
         shape: Block
-        blinking: Always
-    blink_interval: 500
-    unfocused_hollow: true
+        blinking: On
+
+    unfocused_hollow: false
 
 draw_bold_text_with_bright_colors: true
 live_config_reload: true
+shell:
+  program: /usr/bin/zsh
+
 mouse_binding:
   - { mouse: Right,   action: PasteSelection }
 

@@ -16,6 +16,12 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
 
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   -- use 'github/copilot.vim'
 end)
 

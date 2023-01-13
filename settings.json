@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Nord Deep",
+  "workbench.colorTheme": "Night Sky",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "editor.acceptSuggestionOnCommitCharacter": true,
@@ -31,5 +31,6 @@
   "editor.minimap.enabled": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
-  }
+  },
+  "tabnine.experimentalAutoImports": true
 }
