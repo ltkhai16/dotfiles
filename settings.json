@@ -32,5 +32,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
+  "terminal.integrated.sendKeybindingsToShell": true
 }
