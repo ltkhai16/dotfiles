@@ -1,97 +1,53 @@
-## ALIAS
-# Use neovim for vim if present.
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+#!/bin/sh
+# My zsh config. Not much to see, just for my personal.
 
-# sudo not required for some system commands
-for command in mount umount sv pacman updatedb su poweroff reboot; do
-	alias $command="sudo $command"
-done; unset command
+### EXPORT ###
 
-se() { cd ~/.local/bin; $EDITOR $(fzf) ;}
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
-# Verbosity and settings that you pretty much just always are going to want.
-alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkd="mkdir -pv" \
-  yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best -o '~/Music/%(title)s.%(ext)s'" \
+# Default programs:
+export EDITOR="nvim"
+export VISUAL="nvim"
+export TERMINAL="alacritty"
+export BROWSER="librewolf"
+export CHROME_EXECUTABLE="brave"
 
-# Colorize commands when possible.
-alias \
-	grep="grep --color=auto" \
-	egrep="egrep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto" \
+# Other program settings:
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
-# These common commands are just too long! Abbreviate them.
-alias \
-	ka="killall" \
-	df="df -h" \
-	free="free -hm" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-	p="pacman" \
-	za="zathura" \
-	nf="neofetch" \
-	py="python" \
-	cl="clear" \
-  rg="ranger" \
- 	jctl="sudo journalctl -p 3 -xb" \
- 	cks="jctl && sudo dmesg | grep error && sudo systemctl --failed" \
-	myip="curl http://ipecho.net/plain; echo" \
-	btr="upower -i `upower -e | grep 'BAT'`" \
-	# pkgfile --update
+# ~/ Clean-up:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 
-# Replacement ls
-alias \
-	l="exa -FG --color=automatic --group-directories-first" \
-	ll="exa -Fl --color=automatic --group-directories-first --icons --git" \
- 	la="l -a" \
- 	lla="ll -a" \
- 	lt="exa -T" \
+# Android-SDK
+export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 
-# Merge Xresources
-alias merge="xrdb -merge ~/.Xresources"
+# ibus-bamboo
+export GTK_IM_MODULE='ibus'
+export QT_IM_MODULE='ibus'
+export XMODIFIERS=@im='ibus'
+export QT4_IM_MODULE='ibus'
+export CLUTTER_IM_MODULE='ibus'
 
-# Pacman and Yay
-alias \
-  pi="p -S --needed" \
-  yi="yay -S --needed" \
-	bpkg="p -Slq | fzf --preview 'pacman -Si {}' --layout=reverse" \
-  cu="p -Qqd | p -Rsu - && p -Sc --noconfirm && yay -Sc --aur --noconfirm && paccache -ruk0" \
+# QT file picker for GTK app
+export GTK_USE_PORTAL=1
 
-# Edit config file
-alias \
-  tc="nvim ~/.config/alacritty/alacritty.yml" \
-  zc="nvim $ZDOTDIR/.zshrc" \
-  sz="source ~/.zshenv" \
-  zac="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \
-  vimc="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
-  mc="sudo -e /etc/pacman.d/mirrorlist" \
+export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
+export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
-# Git command
-alias \
-	gcl="git clone" \
-	gs="git status" \
-	ga="git add" \
-	gp="git push" \
-	gpo="git push origin" \
-	gtd="git tag --delete" \
-	gtdr='git tag --delete origin' \
-	gr='git branch -r' \
-	gplo='git pull origin' \
-	gb='git branch' \
-	gc='git commit' \
-	gd='git diff' \
-	gco='git checkout' \
-	gl='git log' \
-	gr='git remote' \
-	grs='git remote show' \
+### CONFIGURATION ###
 
-## CONFIGURATION
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 
@@ -99,19 +55,17 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
-export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
 # History in cache directory:
-HISTSIZE=100000
-SAVEHIST=100000
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+HISTSIZE=10000
+SAVEHIST=10000
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
-export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
+
 
 up () {
   local d=""
@@ -130,9 +84,11 @@ up () {
   fi
 }
 
+source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/completion.zsh
-# Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(starship init zsh)"
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+eval "$(starship init zsh)"

@@ -1,14 +1,5 @@
-  # ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
-#  / ___/ _ \|  \/  |  _ \| |   | ____|_   _|_ _/ _ \| \ | |
-# | |  | | | | |\/| | |_) | |   |  _|   | |  | | | | |  \| |
-# | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
-#  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
- #
 
-# +---------+
 # | General |
-# +---------+
-
 # Load more completions
 fpath=(/usr/share/zsh/site-functions $fpath)
 
@@ -31,25 +22,14 @@ bindkey -M menuselect '^xu' undo                           # Undo
 autoload -U compinit; compinit
 _comp_options+=(globdots) # With hidden files
 
-# Only work with the Zsh function vman
-# See $DOTFILES/zsh/scripts.zsh
-compdef vman="man"
-
-# +---------+
 # | Options |
-# +---------+
 
 # setopt GLOB_COMPLETE      # Show autocompletion menu with globs
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 
-# +---------+
 # | zstyles |
-# +---------+
-
-# Ztyle pattern
-# :completion:<function>:<completer>:<command>:<argument>:<tag>
 
 # Define completers
 zstyle ':completion:*' completer _extensions _complete _approximate
@@ -73,7 +53,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' complete-options true
 
 zstyle ':completion:*' file-sort modification
-
 
 zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
 zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
@@ -99,6 +78,3 @@ zstyle ':completion:*' keep-prefix true
 
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
-## For kubernetes
-#source $DOTFILES/zsh/plugins/kubectl-completion/_kubectl
-#zstyle ':completion:*:*:kubectl:*' list-grouped false

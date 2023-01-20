@@ -7,6 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
+  use 'folke/tokyonight.nvim'
   use "EdenEast/nightfox.nvim"
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'wbthomason/packer.nvim'
