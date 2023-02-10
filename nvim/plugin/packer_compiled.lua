@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/mankai/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -118,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-kitty"] = {
+    loaded = true,
+    path = "/home/mankai/.local/share/nvim/site/pack/packer/start/vim-kitty",
+    url = "https://github.com/fladson/vim-kitty"
   }
 }
 

@@ -8,7 +8,6 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'folke/tokyonight.nvim'
-  use "EdenEast/nightfox.nvim"
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'wbthomason/packer.nvim'
   use 'nvim-lualine/lualine.nvim' -- Status line
@@ -22,6 +21,8 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
+
+  use "fladson/vim-kitty"
 
   -- use 'github/copilot.vim'
 end)

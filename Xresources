@@ -1,4 +1,4 @@
 ! COLORS FOR NSXIV
 *.foreground:   #bbc2cf
-*.background:   #282c34
-*.font: Hack:style=regular:size=10
+*.background:   #1d2021
+*.font: Source Code Pro:style=regular:size=12

@@ -13,12 +13,13 @@ alias \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
   yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best -o '~/Music/%(title)s.%(ext)s'" \
+	yta="yt -x -f 'ba' -o '~/Music/%(title)s.%(ext)s'" \
 
 # Colorize commands when possible.
 alias \
 	grep="grep --color=auto" \
 	egrep="egrep --color=auto" \
+  fgrep="fgrep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto" \
@@ -30,15 +31,17 @@ alias \
 	e="$EDITOR" \
 	p="pacman" \
 	za="zathura" \
-	nf="neofetch" \
 	py="python" \
 	cl="clear" \
-  rg="ranger" \
+  sxiv="nsxiv" \
+  nn="nnn -de" \
  	jctl="sudo journalctl -p 3 -xb" \
  	cks="jctl && sudo dmesg | grep error && sudo systemctl --failed" \
 	myip="curl http://ipecho.net/plain; echo" \
 	btr="upower -i `upower -e | grep 'BAT'`" \
   sz="source ~/.zshrc" \
+  merge="xrdb -merge ~/.Xresources" \
+  lfont="kitty +list-fonts --psnames | grep" \
 	# pkgfile --update
 
 # Replacement ls
@@ -49,9 +52,6 @@ alias \
  	lla="ll -a" \
  	lt="exa -T" \
 
-# Merge Xresources
-alias merge="xrdb -merge ~/.Xresources"
-
 # Pacman and Yay
 alias \
   pi="p -S --needed" \
@@ -61,12 +61,16 @@ alias \
 
 # Edit config file
 alias \
-  cfa="nvim $ZDOTDIR/aliases.zsh" \
-  cft="nvim ~/.config/alacritty/alacritty.yml" \
-  cfz="nvim $ZDOTDIR/.zshrc" \
-  cfza="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \
-  cfv="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
-  cfm="sudo -e /etc/pacman.d/mirrorlist" \
+  ea="nvim $ZDOTDIR/aliases.zsh" \
+  ez="nvim $ZDOTDIR/.zshrc" \
+  et="nvim ~/.config/alacritty/alacritty.yml" \
+  ekt="nvim ~/.config/kitty/kitty.conf" \
+  eza="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \
+  ev="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
+  emr="sudo -e /etc/pacman.d/mirrorlist" \
+
+# Grub update
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # Git command
 alias \
