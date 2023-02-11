@@ -1,5 +1,6 @@
 {
 	"aururl": "https://aur.archlinux.org",
+	"aurrpcurl": "",
 	"buildDir": "/home/mankai/.cache/yay",
 	"editor": "",
 	"editorflags": "",
@@ -42,5 +43,5 @@
 	"batchinstall": false,
 	"singlelineresults": false,
 	"separatesources": true,
-	"version": "11.3.0"
+	"version": "11.3.1"
 }
