@@ -1,9 +1,9 @@
 {
-  "workbench.colorTheme": "Night Sky",
+  "workbench.colorTheme": "Simple Dark",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "editor.acceptSuggestionOnCommitCharacter": true,
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Hack",
   "terminal.integrated.fontFamily": "",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
@@ -32,9 +32,19 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "tabnine.experimentalAutoImports": true,
   "terminal.integrated.sendKeybindingsToShell": true,
   "dart.env": {
     "CHROME_EXECUTABLE": "/usr/bin/brave"
-  }
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "liveServer.settings.donotShowInfoMsg": true
 }

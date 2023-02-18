@@ -1,124 +1,84 @@
 format = """
-[](bg:#D3E4FF)\
-$charater\
-[](bg:#3B4252)\
+$status\
+${custom.icon}\
+[](fg:#5FAFFF bg:#282C34)\
+[](fg:#282C34 bg:#3E4452)\
 $directory\
-[](fg:#3B4252) \
+[](fg:#3E4452 bg:#282C34)\
+[](fg:#282C34 bg:#5FAFFF)\
+$time\
+[](fg:#5FAFFF bg:#282C34)\
+[](fg:#282C34 bg:#3E4452)\
+$cmd_duration\
+[](fg:#3E4452 bg:#282C34)\
+[](fg:#282C34 bg:#5FAFFF)\
 $git_branch\
 $git_status\
-[](fg:#4C566A) \
-$c\
-$golang\
-$java\
-$lua\
-$nodejs\
-$python\
-$rust\
-[](fg:#6789A8)\
-$docker_context\
-[](fg:#06969A bg:#33658A)\
-$cmd_duration\
-[ ](fg:#33658A)
+[ ](fg:#5FAFFF)\
 """
+
 command_timeout = 5000
-# Disable the blank line at the start of the prompt
-# add_newline = false
-[line_break]
+add_newline = true
+
+[status]
+style = "fg:#FF0000 bg:#5FAFFF"
+symbol = ""
+format = "[ $symbol ]($style)"
 disabled = false
+
+[custom.icon]
+description = "Display icon for each home folder"
+command = """
+if [[ "$PWD" = "$HOME" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Documents" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Downloads" ]]; then
+    echo "ﲐ "
+elif [[ "$PWD" = "$HOME/Music" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Pictures" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Videos" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/.local/bin" ]]; then
+    echo " "
+else
+    echo "ﱮ "
+fi
+"""
+when = "true"
+style = "fg:#3E4452 bg:#5FAFFF"
+format = "[ $output ]($style)"
 
 [directory]
-read_only = " "
-style = "bg:#3B4252 fg:#CDDFFF"
+style = "fg:#FFFFFF bg:#3E4452"
 format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-truncate_to_repo = true # truncates directory to root folder if in github repo
+truncate_to_repo = true
+truncation_length = 2
+truncation_symbol = "..."
+home_symbol = "~"
+fish_style_pwd_dir_length = 2
+use_logical_path = true
+use_os_path_sep = true
 
-[directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
-[character]
-success_symbol = "[󰸞](bold green)"
-error_symbol = "[✗](bold red)"
-style = "bg:#1d2021"
-format = '[ $symbol ]($style)'
+[time]
+style = "fg:#FFFFFF bg:#5FAFFF"
+format = "[  $time ]($style)"
+time_format = "%l:%M%P"
+disabled = true
 
 [cmd_duration]
-min_time = 4
-show_milliseconds = false
+min_time = 750
+style = "fg:#FFFFFF bg:#3E4452"
+format = "[ 神$duration ]($style)"
 disabled = false
-style = "bg:#33658A italic yellow"
-format = '[ took $duration ]($style)'
-
-[c]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[ $symbol $context ]($style) $path'
-
-[elixir]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
-symbol = ""
-style = "bg:#4C566A"
-format = '[ $symbol $branch ]($style)'
+style = "fg:#FFFFFF bg:#5FAFFF"
+format = "[ $symbol $branch]($style)"
+symbol = " "
 
 [git_status]
-style = "bg:#4C566A"
-format = '[$all_status$ahead_behind ]($style)'
-
-[golang]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[java]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[lua]
-symbol = "🌙 "
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
-[python]
-symbol = "🐍 "
-style = "bg:#6789A8"
-format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
-[rust]
-symbol = ""
-style = "bg:#6789A8"
-format = '[ $symbol ($version) ]($style)'
-
+style = "fg:#FFFFFF bg:#5FAFFF"
+format = "[ ($all_status) ]($style)"

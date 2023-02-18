@@ -34,7 +34,6 @@ export \
   PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/" \
   PATH="$PATH:$ANDROID_ROOT/emulator" \
   PATH="$PATH:$ANDROID_SDK_ROOT/tools/" \
-  JAVA_HOME="/usr/lib/jvm/java-8-openjdk" \
 
 # nnn file manager
 export \
@@ -43,9 +42,6 @@ export \
   NNN_FIFO="/tmp/nnn.fifo" \
   NNN_PLUG='p:preview-tui' \
   SPLIT='v' \
-
-# QT file picker for GTK app
-export GTK_USE_PORTAL=1
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
 

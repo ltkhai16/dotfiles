@@ -12,14 +12,14 @@ alias \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
-  yt="yt-dlp --embed-metadata -i" \
+	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f 'ba' -o '~/Music/%(title)s.%(ext)s'" \
 
 # Colorize commands when possible.
 alias \
 	grep="grep --color=auto" \
 	egrep="egrep --color=auto" \
-  fgrep="fgrep --color=auto" \
+	fgrep="fgrep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto" \
@@ -33,8 +33,9 @@ alias \
 	za="zathura" \
 	py="python" \
 	cl="clear" \
-  sxiv="nsxiv" \
-  nn="nnn -de" \
+	cat="bat" \
+	sxiv="nsxiv" \
+  rg="ranger" \
  	jctl="sudo journalctl -p 3 -xb" \
  	cks="jctl && sudo dmesg | grep error && sudo systemctl --failed" \
 	myip="curl http://ipecho.net/plain; echo" \
@@ -42,6 +43,7 @@ alias \
   sz="source ~/.zshrc" \
   merge="xrdb -merge ~/.Xresources" \
   lfont="kitty +list-fonts --psnames | grep" \
+  sdn="shutdown now" \
 	# pkgfile --update
 
 # Replacement ls
@@ -56,13 +58,13 @@ alias \
 alias \
   pi="p -S --needed" \
   yi="yay -S --needed" \
-	bpkg="p -Slq | fzf --preview 'pacman -Si {}' --layout=reverse" \
-  cu="p -Qqd | p -Rsu - && p -Sc --noconfirm && yay -Sc --aur --noconfirm && paccache -ruk0" \
+  bpkg="p -Slq | fzf --preview 'pacman -Si {}' --layout=reverse" \
+  cu="p -Sc --noconfirm && yay -Sc --aur --noconfirm && paccache -ruk0" \
 
 # Edit config file
 alias \
   ea="nvim $ZDOTDIR/aliases.zsh" \
-  ez="nvim $ZDOTDIR/.zshrc" \
+  ez="nvim ~/.zshrc" \
   et="nvim ~/.config/alacritty/alacritty.yml" \
   ekt="nvim ~/.config/kitty/kitty.conf" \
   eza="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \

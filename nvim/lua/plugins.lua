@@ -7,9 +7,8 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
-  use 'wbthomason/packer.nvim'
   use 'nvim-lualine/lualine.nvim' -- Status line
 
 
