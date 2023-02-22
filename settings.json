@@ -1,10 +1,10 @@
 {
-  "workbench.colorTheme": "Simple Dark",
+  "workbench.colorTheme": "Edge Dark (Neon)",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "editor.acceptSuggestionOnCommitCharacter": true,
-  "editor.fontFamily": "Hack",
-  "terminal.integrated.fontFamily": "",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.fontWeight": "normal",
@@ -46,5 +46,6 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gruvboxMaterial.darkContrast": "hard"
 }

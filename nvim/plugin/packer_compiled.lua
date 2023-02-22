@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/mankai/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -99,20 +104,10 @@ _G.packer_plugins = {
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["packer.nvim"] = {
-    loaded = true,
-    path = "/home/mankai/.local/share/nvim/site/pack/packer/start/packer.nvim",
-    url = "https://github.com/wbthomason/packer.nvim"
-  },
   ["prettier.nvim"] = {
     loaded = true,
     path = "/home/mankai/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/mankai/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-kitty"] = {
     loaded = true,

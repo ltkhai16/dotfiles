@@ -7,10 +7,10 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use { "catppuccin/nvim", as = "catppuccin" }
+
+  use { "ellisonleao/gruvbox.nvim" }
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'nvim-lualine/lualine.nvim' -- Status line
-
 
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client

@@ -14,6 +14,7 @@ export \
   CHROME_EXECUTABLE="chromium" \
 
 # Other program settings
+export MPLBACKEND="qtagg"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
@@ -34,14 +35,6 @@ export \
   PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/" \
   PATH="$PATH:$ANDROID_ROOT/emulator" \
   PATH="$PATH:$ANDROID_SDK_ROOT/tools/" \
-
-# nnn file manager
-export \
-  NNN_OPTS="H" \
-  LC_COLLATE="C" \
-  NNN_FIFO="/tmp/nnn.fifo" \
-  NNN_PLUG='p:preview-tui' \
-  SPLIT='v' \
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
 
@@ -81,20 +74,6 @@ up () {
   if ! cd "$d"; then
     echo " Couldn't go up $limit dirs.";
   fi
-}
-###------------------------------------------------###
-n () # to cd on quit
-{
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    nnn "$@"
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
 }
 
 source $ZDOTDIR/aliases.zsh

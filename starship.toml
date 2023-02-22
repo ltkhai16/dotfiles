@@ -34,7 +34,7 @@ if [[ "$PWD" = "$HOME" ]]; then
 elif [[ "$PWD" = "$HOME/Documents" ]]; then
     echo " "
 elif [[ "$PWD" = "$HOME/Downloads" ]]; then
-    echo "ﲐ "
+    echo " "
 elif [[ "$PWD" = "$HOME/Music" ]]; then
     echo " "
 elif [[ "$PWD" = "$HOME/Pictures" ]]; then
@@ -44,7 +44,7 @@ elif [[ "$PWD" = "$HOME/Videos" ]]; then
 elif [[ "$PWD" = "$HOME/.local/bin" ]]; then
     echo " "
 else
-    echo "ﱮ "
+    echo " "
 fi
 """
 when = "true"
