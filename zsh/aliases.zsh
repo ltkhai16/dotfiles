@@ -48,8 +48,8 @@ alias \
 
 # Replacement ls
 alias \
-	l="exa -FG --color=automatic --group-directories-first" \
-	ll="exa -Fl --color=automatic --group-directories-first --icons --git" \
+	l="exa -FG --group-directories-first" \
+	ll="exa -Fl --group-directories-first --icons" \
  	la="l -a" \
  	lla="ll -a" \
  	lt="exa -T" \

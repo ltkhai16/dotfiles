@@ -1,6 +1,15 @@
 #!/bin/sh
 # My zsh config. Not much to see, just for my personal.
 
+### Plugin ###
+
+source /usr/share/zsh-antigen/antigen.zsh
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-history-substring-search
+
+# Tell antigen that you're done
+antigen apply
+
 ### EXPORT ###
 
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
@@ -9,12 +18,10 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export \
   EDITOR="nvim" \
   VISUAL="nvim" \
-  TERMINAL="kitty" \
-  BROWSER="librewolf" \
+  BROWSER="firefox" \
   CHROME_EXECUTABLE="chromium" \
 
 # Other program settings
-export MPLBACKEND="qtagg"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
@@ -28,13 +35,7 @@ export \
   WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc" \
 
 # Android-SDK
-export \
-  ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android" \
-  ANDROID_SDK_ROOT='/opt/android-sdk' \
-  PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/" \
-  PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/" \
-  PATH="$PATH:$ANDROID_ROOT/emulator" \
-  PATH="$PATH:$ANDROID_SDK_ROOT/tools/" \
+export PATH="$PATH:/opt/flutter/bin"
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
 
@@ -59,28 +60,10 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
-up () {
-  local d=""
-  local limit="$1"
-
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
-
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
-
-  if ! cd "$d"; then
-    echo " Couldn't go up $limit dirs.";
-  fi
-}
-
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/completion.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 

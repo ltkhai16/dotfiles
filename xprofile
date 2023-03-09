@@ -6,6 +6,3 @@ export \
   QT4_IM_MODULE=ibus \
   CLUTTER_IM_MODULE=ibus \
   GLFW_IM_MODULE=ibus \
-
-export GST_VAAPI_ALL_DRIVERS=1
-export GTK_USE_PORTAL=1
