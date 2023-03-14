@@ -2,7 +2,7 @@
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # sudo not required for some system commands
-for command in mount umount sv pacman updatedb su poweroff reboot find; do
+for command in mount umount sv pacman updatedb su find; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -30,21 +30,14 @@ alias \
 	free="free -hm" \
 	e="$EDITOR" \
 	p="pacman" \
-	za="zathura" \
-	py="python" \
+	py="python3" \
 	cl="clear" \
-	cat="bat" \
-	sxiv="nsxiv" \
-  rg="ranger" \
  	jctl="sudo journalctl -p 3 -xb" \
  	cks="jctl && sudo dmesg | grep error && sudo systemctl --failed" \
 	myip="curl http://ipecho.net/plain; echo" \
 	btr="upower -i `upower -e | grep 'BAT'`" \
-  sz="source ~/.zshrc" \
-  merge="xrdb -merge ~/.Xresources" \
-  lfont="kitty +list-fonts --psnames | grep" \
-  sdn="shutdown now" \
-	# pkgfile --update
+	sz="source ~/.zshrc" \
+  	sdn="shutdown now" \
 
 # Replacement ls
 alias \
@@ -67,7 +60,6 @@ alias \
   ez="nvim ~/.zshrc" \
   et="nvim ~/.config/alacritty/alacritty.yml" \
   ekt="nvim ~/.config/kitty/kitty.conf" \
-  eza="nvim $XDG_CONFIG_HOME/zathura/zathurarc" \
   ev="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
   emr="sudo -e /etc/pacman.d/mirrorlist" \
 

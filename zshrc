@@ -1,14 +1,21 @@
 #!/bin/sh
 # My zsh config. Not much to see, just for my personal.
 
-### Plugin ###
+source /usr/share/zplug/init.zsh
 
-source /usr/share/zsh-antigen/antigen.zsh
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
+# Make sure to use double quotes
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
 
-# Tell antigen that you're done
-antigen apply
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
 
 ### EXPORT ###
 
@@ -22,7 +29,7 @@ export \
   CHROME_EXECUTABLE="chromium" \
 
 # Other program settings
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
@@ -35,7 +42,7 @@ export \
   WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc" \
 
 # Android-SDK
-export PATH="$PATH:/opt/flutter/bin"
+export PATH="$PATH:$HOME/development/flutter/bin"
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
 
