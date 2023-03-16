@@ -9,27 +9,33 @@ window:
   opacity: 1
 
   title: Alacritty
-  dynamic_title: true
+
+  class:
+    instance: Alacritty
+    general: Alacritty
 
 scrolling:
   history: 5000 
-  multiplier: 0
   auto_scroll: true
 
 font:
   normal:
-    family: "JetBrainsMono Nerd Font"
+    family: "SFMono Nerd Font Mono"
     style: Regular 
   bold:
-    family: "JetBrainsMono Nerd Font"
-    style: Medium 
+    family: "SFMono Nerd Font Mono"
+    style: Bold 
   italic:
-    family: "JetBrainsMono Nerd Font"
+    family: "SFMono Nerd Font Mono"
     style: Italic
-  size: 13
+  bold_italic:
+    family: "SFMono Nerd Font Mono"
+    style: Bold Italic
+  size: 12
   offset:
     x: 0
     y: 0
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tokyo Night)
 # Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
@@ -61,13 +67,7 @@ colors:
     cyan:    '0x0db9d7'
     white:   '0xacb0d0'
 
-draw_bold_text_with_bright_colors: true
 live_config_reload: true
-
-cursor:
-    style:
-        shape: Block
-        blinking: Off
 
 key_bindings:
   - { key: Q,         mods: Control,       action: Quit                       }
