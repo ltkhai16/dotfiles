@@ -1,22 +1,6 @@
 #!/bin/sh
 # My zsh config. Not much to see, just for my personal.
 
-source /usr/share/zplug/init.zsh
-
-# Make sure to use double quotes
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
 ### EXPORT ###
 
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
@@ -42,7 +26,6 @@ export \
   WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc" \
 
 # Android-SDK
-export PATH="$PATH:$HOME/development/flutter/bin"
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|reboot|history|cd -|cd ..|pacman|p|yay|cl)"
 
@@ -69,8 +52,9 @@ setopt HIST_REDUCE_BLANKS
 
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/completion.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 

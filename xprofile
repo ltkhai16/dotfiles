@@ -1,8 +1,10 @@
-# ibus-bamboo
+# fcitx-bamboo
 export \
-  GTK_IM_MODULE=ibus \
-  QT_IM_MODULE=ibus \
-  XMODIFIERS=@im=ibus \
-  QT4_IM_MODULE=ibus \
-  CLUTTER_IM_MODULE=ibus \
-  GLFW_IM_MODULE=ibus \
+  GTK_IM_MODULE=fcitx \
+  QT_IM_MODULE=fcitx \
+  XMODIFIERS=@im=fcitx \
+  QT4_IM_MODULE=fcitx \
+  CLUTTER_IM_MODULE=fcitx \
+  GLFW_IM_MODULE=fcitx \
+
+export GTK_USE_PORTAL=1
