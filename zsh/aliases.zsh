@@ -2,7 +2,7 @@
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # sudo not required for some system commands
-for command in mount umount sv pacman updatedb su find; do
+for command in mount umount sv pacman updatedb su find nala; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -13,7 +13,7 @@ alias \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f 'ba' -o '~/Music/%(title)s.%(ext)s'" \
+	yta="yt-dlp -x -f 'ba' -o '~/Music/%(title)s.%(ext)s'" \
 
 # Colorize commands when possible.
 alias \
@@ -21,8 +21,6 @@ alias \
 	egrep="egrep --color=auto" \
 	fgrep="fgrep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto" \
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -58,13 +56,6 @@ alias \
 alias \
   ea="nvim $ZDOTDIR/aliases.zsh" \
   ez="nvim ~/.zshrc" \
-  et="nvim ~/.config/alacritty/alacritty.yml" \
-  ekt="nvim ~/.config/kitty/kitty.conf" \
-  ev="nvim $XDG_CONFIG_HOME/nvim/lua/base.lua" \
-  emr="sudo -e /etc/pacman.d/mirrorlist" \
-
-# Grub update
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # Git command
 alias \
