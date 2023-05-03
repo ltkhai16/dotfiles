@@ -7,8 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-
-  use { "ellisonleao/gruvbox.nvim" }
+  use 'Shatur/neovim-ayu'
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'nvim-lualine/lualine.nvim' -- Status line
 
@@ -21,8 +20,5 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
-  use "fladson/vim-kitty"
-
-  -- use 'github/copilot.vim'
 end)
 

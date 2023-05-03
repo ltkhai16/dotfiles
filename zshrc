@@ -6,19 +6,16 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export \
   EDITOR="nvim" \
   VISUAL="nvim" \
-  BROWSER="firefox" \
   CHROME_EXECUTABLE="chromium" \
 
 # Other program settings
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # ~/ Clean-up
 export \
   XDG_CONFIG_HOME="$HOME/.config" \
   XDG_DATA_HOME="$HOME/.local/share" \
   XDG_CACHE_HOME="$HOME/.cache" \
   ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh" \
-
-export PATH="$PATH:$HOME/dev/flutter/bin"
 
 autoload -U colors && colors
 
@@ -37,8 +34,9 @@ setopt HIST_REDUCE_BLANKS
 
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/completion.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 

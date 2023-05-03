@@ -1,9 +1,0 @@
-# ibus-bamboo
-export \
-  GTK_IM_MODULE=ibus \
-  QT_IM_MODULE=ibus \
-  XMODIFIERS=@im=ibus \
-  QT4_IM_MODULE=ibus \
-  CLUTTER_IM_MODULE=ibus \
-  GLFW_IM_MODULE=ibus \
-

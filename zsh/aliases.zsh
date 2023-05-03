@@ -2,7 +2,7 @@
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # sudo not required for some system commands
-for command in mount umount sv pacman updatedb su find nala; do
+for command in mount umount sv pacman updatedb su find; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -47,10 +47,11 @@ alias \
 
 # Pacman and Yay
 alias \
-  pi="p -S --needed" \
-  yi="yay -S --needed" \
+  pi="p -Syu --needed" \
+  yi="yay -Syu --needed" \
   bpkg="p -Slq | fzf --preview 'pacman -Si {}' --layout=reverse" \
-  cu="p -Sc --noconfirm && yay -Sc --aur --noconfirm && paccache -ruk0" \
+  cu="p -Sc --noconfirm && yay -Sc --aur --noconfirm && paccache -ruk0 && pacman -Qtdq | pacman -Rns -" \
+  ups="p -Syu" \
 
 # Edit config file
 alias \

@@ -6,7 +6,7 @@ window:
     x: 0
     y: 0
   dynamic_padding: true
-  opacity: 1
+  opacity: 0.92
 
   title: Alacritty
 
@@ -20,16 +20,16 @@ scrolling:
 
 font:
   normal:
-    family: "SFMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Regular 
   bold:
-    family: "SFMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Bold 
   italic:
-    family: "SFMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Italic
   bold_italic:
-    family: "SFMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Bold Italic
   size: 12
   offset:
@@ -37,35 +37,38 @@ font:
     y: 0
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tokyo Night)
-# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
+# github Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x1b1c28'
-    foreground: '0xa9b1d6'
+    background: '0x0d1117'
+    foreground: '0xb3b1ad'
 
   # Normal colors
   normal:
-    black:   '0x32344a'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xad8ee6'
-    cyan:    '0x449dab'
-    white:   '0x787c99'
+    black:   '0x484f58'
+    red:     '0xff7b72'
+    green:   '0x3fb950'
+    yellow:  '0xd29922'
+    blue:    '0x58a6ff'
+    magenta: '0xbc8cff'
+    cyan:    '0x39c5cf'
+    white:   '0xb1bac4'
 
   # Bright colors
   bright:
-    black:   '0x444b6a'
-    red:     '0xff7a93'
-    green:   '0xb9f27c'
-    yellow:  '0xff9e64'
-    blue:    '0x7da6ff'
-    magenta: '0xbb9af7'
-    cyan:    '0x0db9d7'
-    white:   '0xacb0d0'
+    black:   '0x6e7681'
+    red:     '0xffa198'
+    green:   '0x56d364'
+    yellow:  '0xe3b341'
+    blue:    '0x79c0ff'
+    magenta: '0xd2a8ff'
+    cyan:    '0x56d4dd'
+    white:   '0xf0f6fc'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xffa198' }
 
 live_config_reload: true
 
