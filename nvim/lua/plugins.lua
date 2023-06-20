@@ -7,7 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'Shatur/neovim-ayu'
+  use 'Mofiqul/dracula.nvim'
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
   use 'nvim-lualine/lualine.nvim' -- Status line
 

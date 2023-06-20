@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/kai/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -88,11 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
-  ["neovim-ayu"] = {
-    loaded = true,
-    path = "/home/kai/.local/share/nvim/site/pack/packer/start/neovim-ayu",
-    url = "https://github.com/Shatur/neovim-ayu"
   },
   ["nvim-cmp"] = {
     loaded = true,
